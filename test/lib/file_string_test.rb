@@ -58,7 +58,7 @@ class Test_FileString < Test::Unit::TestCase
     }
   end
 
-  def test_deleteString
+  def test_delete
     src      = 'hoge'
     replace  = 'fuga'
     erase    = 'hoge'

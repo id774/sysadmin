@@ -23,3 +23,12 @@ $ gem install sysadmin
 ==========
 
 Sysadmin::FileString
+
+
+========
+メソッド
+========
+Sysadmin::FileString.append
+Sysadmin::FileString.newfile
+Sysadmin::FileString.replace
+Sysadmin::FileString.delete
