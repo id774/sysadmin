@@ -59,7 +59,13 @@ namespace :test do
   desc "Run Tests"
   require 'rake/testtask'
   Rake::TestTask.new("test") do |t|
-    ruby FileList['test/*_test.rb']
-    ruby FileList['test/lib/*_test.rb']
+    ruby "test/*_test.rb"
+    Dir::glob('test/lib').each do |d|
+      Dir::foreach(d) do |f|
+        if (FileTest.file?(File.join(d, f)))
+          ruby File.join(d, f)
+        end
+      end
+    end
   end
 end

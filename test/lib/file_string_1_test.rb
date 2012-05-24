@@ -26,21 +26,6 @@ class Test_FileString < Test::Unit::TestCase
     }
   end
 
-  def test_newfile
-    init     = 'init'
-    second   = 'second'
-    expect   = "second\n"
-
-    Sysadmin::FileString.newfile(@testfile, init)
-    Sysadmin::FileString.newfile(@testfile, second)
-
-    open(@testfile) { |file|
-      while line = file.gets
-        assert_equal(expect, line)
-      end
-    }
-  end
-
   def test_replace
     src      = 'hoge'
     try      = 'fuga'
