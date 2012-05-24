@@ -18,6 +18,13 @@ module Sysadmin
       f.close
     end
 
+    def self.newfile(file, str)
+      f = open(file, 'w')
+      f << str
+      f << "\n"
+      f.close
+    end
+
     def self.replaceFile(f, src, out)
       f.rewind
       body = f.read
