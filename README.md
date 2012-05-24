@@ -47,10 +47,8 @@ Author
 + http://github.com/id774
 
 
-License
--------
+Copyright and license
+---------------------
 
-Licensed under the GNU GENERAL PUBLIC LICENSE, Version 3.0.
-
-  http://www.gnu.org/copyleft/gpl.html
+See the file doc/LICENSE.
 
