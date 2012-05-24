@@ -1,73 +1,7 @@
-=== 12.4.0 / 2012-04-30
-
-* Inspect SubCommand added to automatic-config.
-
-* Added Plugins.
-
-  * Filter::Reverse
-	* Publish::SMTP
-	* Publish::Mail
-
-* Running all Integration Tests with CI.
-
-
-=== 12.3.1 / 2012-03-16
-
-* English Documents.
-
-  * doc/README
-  * doc/PLUGINS
-
-* The user who installed the gem package be able to create own plugins.
-
-  * ~/.automatic/plugins
-
-* Utils merged to automatic-config command and added following subcommand.
-
-  * scaffold
-  * autodiscovery
-  * opmlparser
-  * feedparser
-  * log
-
-* Added Integration Test Script for CI.
-
-  * script/build
-
-
-=== 12.03 / 2012-03-07
-
-* Distribute as a gem library.
-
-* Plugins added.
-
-  * CustomFeed::SVNLog
-  * Notify::Ikachan
-  * Filter::TumblrResize
-  * Filter::Image
-  * Store::TargetLink
-
-* CI / Build scripts.
-
-  * script/bootstrap
-
-* Signficant Refactoring.
-
-
-=== 12.02.1 / 2012-02-25
-
-* Point release.
-
-  * Big Refactoring for core.
-  * Reorganization of the namespace.
-  * A few plugins added.
-
-
-=== 12.02 / 2012-02-18
+=== 0.0.1 / 2012-05-23
 
 * First release.
 
-  * Scratch of this script.
-  * Plugin existing only for hatenabookmark.
+  * Add Sysadmin::FileString
 
 
