@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "sysadmin"
-  s.version = "0.0.1"
+  s.version = "0.0.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["id774"]
-  s.date = "2012-05-23"
+  s.date = "2012-05-24"
   s.description = "System Administration General Library"
   s.email = "idnanashi@gmail.com"
   s.extra_rdoc_files = [
@@ -28,6 +28,7 @@ Gem::Specification.new do |s|
     "lib/sysadmin/file_string.rb",
     "script/.gitkeep",
     "spec/.gitkeep",
+    "sysadmin.gemspec",
     "test/lib/file_string_test.rb",
     "test/sysadmin_test.rb",
     "vendor/.gitkeep"
