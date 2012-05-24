@@ -60,6 +60,6 @@ namespace :test do
   require 'rake/testtask'
   Rake::TestTask.new("test") do |t|
     ruby FileList['test/*_test.rb']
-    ruby FileList['test/**/*_test.rb']
+    ruby FileList['test/lib/*_test.rb']
   end
 end
