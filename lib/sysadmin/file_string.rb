@@ -36,21 +36,25 @@ module Sysadmin
     end
 
     def self.replace(file, src, out)
+      file.flock(File::LOCK_EX)
       open(file, "r+") { |f|
-        f.flock(File::LOCK_EX)
         replaceFile(f, src, out)
         f.truncate(f.tell)
       }
+      file.flock(File::LOCK_UN)
     end
 
     def self.delete(file, str)
       out = ""
+      file.flock(File::LOCK_SH)
       IO.foreach(file) { |line|
         out << line unless line.include?(str)
       }
+      file.flock(File::LOCK_EX)
       open(file, "w") { |f|
         f.write out
       }
+      file.flock(File::LOCK_UN)
     end
   end
 end
