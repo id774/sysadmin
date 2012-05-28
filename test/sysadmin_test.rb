@@ -8,7 +8,7 @@ require 'sysadmin'
 
 class Test_Sysadmin < Test::Unit::TestCase
   def test_version
-    expect = '0.0.2'
+    expect = '0.0.3'
     version = Sysadmin.const_get(:VERSION)
     p "sysadmin #{version}"
     assert_equal(expect, version)
