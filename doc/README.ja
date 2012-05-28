@@ -22,13 +22,26 @@ $ gem install sysadmin
 モジュール
 ==========
 
-Sysadmin::FileString
+- Sysadmin::FileString
 
 
 ========
 メソッド
 ========
-Sysadmin::FileString.append
-Sysadmin::FileString.newfile
-Sysadmin::FileString.replace
-Sysadmin::FileString.delete
+
+* Sysadmin::FileString.append(file, str)
+
+  ファイルに文字列を追記する
+
+* Sysadmin::FileString.newfile(file, str)
+
+  ファイルを新規作成する
+
+* Sysadmin::FileString.replace(file, src, out)
+
+  ファイル内の文字列を置換する
+
+* Sysadmin::FileString.delete(file, str)
+
+  ファイルから文字列にマッチする行を取り除く
+
