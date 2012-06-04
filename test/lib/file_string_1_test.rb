@@ -16,10 +16,10 @@ class Test_FileString < Test::Unit::TestCase
     expect   = "hoge\n"
 
     3.times do
-      Sysadmin::FileString.append(@testfile, src)
+      Sysadmin::FileString.append(@testfile.path, src)
     end
 
-    open(@testfile) { |file|
+    open(@testfile.path) { |file|
       while line = file.gets
         assert_equal(expect, line)
       end
@@ -32,11 +32,11 @@ class Test_FileString < Test::Unit::TestCase
     expect   = "fuga\n"
 
     3.times do
-      Sysadmin::FileString.append(@testfile, src)
+      Sysadmin::FileString.append(@testfile.path, src)
     end
-    Sysadmin::FileString.replace(@testfile, src, try)
+    Sysadmin::FileString.replace(@testfile.path, src, try)
 
-    open(@testfile) { |file|
+    open(@testfile.path) { |file|
       while line = file.gets
         assert_equal(expect, line)
       end
@@ -50,15 +50,15 @@ class Test_FileString < Test::Unit::TestCase
     expect   = "fuga\n"
 
     3.times do
-      Sysadmin::FileString.append(@testfile, src)
+      Sysadmin::FileString.append(@testfile.path, src)
     end
-    Sysadmin::FileString.replace(@testfile, src, replace)
+    Sysadmin::FileString.replace(@testfile.path, src, replace)
     2.times do
-      Sysadmin::FileString.append(@testfile, src)
+      Sysadmin::FileString.append(@testfile.path, src)
     end
-    Sysadmin::FileString.delete(@testfile, erase)
+    Sysadmin::FileString.delete(@testfile.path, erase)
 
-    open(@testfile) { |file|
+    open(@testfile.path) { |file|
       while line = file.gets
         assert_equal(expect, line)
       end

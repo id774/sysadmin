@@ -16,10 +16,10 @@ class Test_FileString < Test::Unit::TestCase
     second   = 'second'
     expect   = "second\n"
 
-    Sysadmin::FileString.newfile(@testfile, init)
-    Sysadmin::FileString.newfile(@testfile, second)
+    Sysadmin::FileString.newfile(@testfile.path, init)
+    Sysadmin::FileString.newfile(@testfile.path, second)
 
-    open(@testfile) { |file|
+    open(@testfile.path) { |file|
       while line = file.gets
         assert_equal(expect, line)
       end
