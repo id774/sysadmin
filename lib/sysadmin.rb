@@ -3,12 +3,12 @@
 # Author::    774 <http://id774.net>
 # Version::   0.0.3
 # Created::   Mar 23, 2012
-# Updated::   Mar 28, 2012
+# Updated::   Jun 05, 2012
 # Copyright:: 774 Copyright (c) 2012
 # License::   Licensed under the GNU GENERAL PUBLIC LICENSE, Version 3.0.
 
 module Sysadmin
-  VERSION = "0.0.3"
+  VERSION = "0.0.4"
   USER_DIR = "/."
   ROOT_DIR = File.expand_path("..", File.dirname(__FILE__))
   $:.unshift ROOT_DIR
