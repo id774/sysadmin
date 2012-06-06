@@ -7,7 +7,7 @@
 # License::   Licensed under the GNU GENERAL PUBLIC LICENSE, Version 3.0.
 
 module Sysadmin
-  VERSION = "0.0.6"
+  VERSION = "0.0.5"
   USER_DIR = "/."
   ROOT_DIR = File.expand_path("..", File.dirname(__FILE__))
   $:.unshift ROOT_DIR
