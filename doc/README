@@ -24,11 +24,11 @@ Module
 
 - Sysadmin::FileString
 
-  String manipulation in the file
+  String manipulation in the file.
 
 - Sysadmin::FileHandler
 
-  Extend the File class
+  Extend the File class.
 
 
 ======
