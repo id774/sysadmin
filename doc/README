@@ -1,0 +1,60 @@
+sysadmin
+
+Name
+ sysadmin - general-purpose library for system management
+
+Syntax
+ require 'sysadmin'
+
+Description
+ This is a collection of general-purpose processing library
+frequently used in scripts for system administration.
+
+
+============
+Installation
+============
+
+$ gem install sysadmin
+
+
+======
+Module
+======
+
+- Sysadmin::FileString
+
+  String manipulation in the file
+
+- Sysadmin::FileHandler
+
+  Extend the File class
+
+
+======
+Method
+======
+
+* Sysadmin::FileString.append(file, str)
+
+  Append a string to a file.
+
+* Sysadmin::FileString.newfile(file, str)
+
+  Create a new file.
+
+* Sysadmin::FileString.replace(file, src, out)
+
+  Replace the string in the file.
+
+* Sysadmin :: FileString.delete(file, str)
+
+  Remove the rows that match the string from the file.
+
+
+* File.zread (file)
+
+  Referred by Sysadmin::FileHandler.
+  Read the file regardless of the uncompressed / compressed gz.
+
+
