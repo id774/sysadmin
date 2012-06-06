@@ -1,3 +1,21 @@
+=== 0.0.5 / 2012-06-06
+
+* Add Class
+
+  * Sysadmin::FileHandler
+
+* Add Methods
+
+  * File.zread
+
+
+=== 0.0.4 / 2012-06-04
+
+* Bug fix
+
+  * Tempfile handling improvement for ruby 1.8.x
+
+
 === 0.0.3 / 2012-05-28
 
 * Add docs
