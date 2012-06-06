@@ -47,7 +47,7 @@ Method
 
   Replace the string in the file.
 
-* Sysadmin :: FileString.delete(file, str)
+* Sysadmin::FileString.delete(file, str)
 
   Remove the rows that match the string from the file.
 
