@@ -15,7 +15,7 @@ kickstart() {
 }
 
 run_tests() {
-    rake test
+    rake spec
 }
 
 main() {
