@@ -1,3 +1,17 @@
+=== 0.1.0 / 2012-07-17
+
+* Re-construction
+
+  * Removed Sysadmin::FileHandler and Sysadmin::FileString
+
+  * New module added "FileExtension" and "DirExtension"
+
+    They extend the Ruby classes.
+    Backward compatibility is nothing perfectly.
+
+  * Testing framework migration from Test::Unit to RSpec
+
+
 === 0.0.5 / 2012-06-06
 
 * Add Class

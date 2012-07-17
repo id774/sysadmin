@@ -22,39 +22,42 @@ $ gem install sysadmin
 Module
 ======
 
-- Sysadmin::FileString
-
-  String manipulation in the file.
-
-- Sysadmin::FileHandler
+- Sysadmin::FileExtension
 
   Extend the File class.
+
+- Sysadmin::DirExtension
+
+  Extend the Dir class.
 
 
 ======
 Method
 ======
 
-* Sysadmin::FileString.append(file, str)
-
-  Append a string to a file.
-
-* Sysadmin::FileString.newfile(file, str)
-
-  Create a new file.
-
-* Sysadmin::FileString.replace(file, src, out)
-
-  Replace the string in the file.
-
-* Sysadmin::FileString.delete(file, str)
-
-  Remove the rows that match the string from the file.
-
-
 * File.zread (file)
 
   Referred by Sysadmin::FileHandler.
   Read the file regardless of the uncompressed / compressed gz.
+
+* File.append_line(file, str)
+
+  Append a string to a file.
+
+* File.new_line(file, str)
+
+  Create a new file.
+
+* File.replace_line(file, src, out)
+
+  Replace the string in the file.
+
+* FileString.remove_line(file, str)
+
+  Remove the rows that match the string from the file.
+
+* Dir.filelist(dir, subdirectory=false)
+
+  Return the file lists in the directory.
 
 

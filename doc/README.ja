@@ -22,39 +22,42 @@ $ gem install sysadmin
 モジュール
 ==========
 
-- Sysadmin::FileString
-
-  ファイル内の文字列操作をおこなう
-
-- Sysadmin::FileHandler
+- Sysadmin::FileExtension
 
   File クラスを拡張する
+
+- Sysadmin::DirExtension
+
+  Dir クラスを拡張する
 
 
 ========
 メソッド
 ========
 
-* Sysadmin::FileString.append(file, str)
-
-  ファイルに文字列を追記する
-
-* Sysadmin::FileString.newfile(file, str)
-
-  ファイルを新規作成する
-
-* Sysadmin::FileString.replace(file, src, out)
-
-  ファイル内の文字列を置換する
-
-* Sysadmin::FileString.delete(file, str)
-
-  ファイルから文字列にマッチする行を取り除く
-
-
 * File.zread(file)
 
   Sysadmin::FileHandler を呼ぶと追加される
   gz 圧縮 / 非圧縮に関わらずファイルを読み込む
+
+* File.append_line(file, str)
+
+  ファイルに文字列を追記する
+
+* File.new_line(file, str)
+
+  ファイルを新規作成する
+
+* File.replace_line(file, src, out)
+
+  ファイル内の文字列を置換する
+
+* File.remove_line(file, str)
+
+  ファイルから文字列にマッチする行を取り除く
+
+* Dir.filelist(dir, subdirectory=false)
+
+  ディレクトリ内のファイル一覧を配列で返す
 
 
