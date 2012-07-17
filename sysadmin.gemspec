@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "sysadmin"
-  s.version = "0.0.5"
+  s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["id774"]
-  s.date = "2012-06-06"
+  s.date = "2012-07-17"
   s.description = "System Administration General Library"
   s.email = "idnanashi@gmail.com"
   s.extra_rdoc_files = [
@@ -28,15 +28,22 @@ Gem::Specification.new do |s|
     "doc/README",
     "doc/README.ja",
     "lib/sysadmin.rb",
-    "lib/sysadmin/file_handler.rb",
-    "lib/sysadmin/file_string.rb",
+    "lib/sysadmin/dir_ext.rb",
+    "lib/sysadmin/file_ext.rb",
     "script/.gitkeep",
     "script/build",
+    "spec/lib/sysadmin/dir_ext_spec.rb",
+    "spec/lib/sysadmin/file_ext_spec.rb",
+    "spec/lib/sysadmin_spec.rb",
+    "spec/spec_helper.rb",
+    "spec/test_dir/.dir1/.file6",
+    "spec/test_dir/.file1",
+    "spec/test_dir/dir2/dir4/file4",
+    "spec/test_dir/dir2/file3",
+    "spec/test_dir/dir3/file5",
+    "spec/test_dir/dir6/dir7/.file7",
+    "spec/test_dir/file2",
     "sysadmin.gemspec",
-    "test/lib/file_handler_test.rb",
-    "test/lib/file_string_1_test.rb",
-    "test/lib/file_string_2_test.rb",
-    "test/sysadmin_test.rb",
     "vendor/.gitkeep"
   ]
   s.homepage = "http://github.com/id774/sysadmin"
