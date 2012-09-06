@@ -31,6 +31,15 @@ $ gem install sysadmin
   Dir クラスを拡張する
 
 
+======
+クラス
+======
+
+- Sysadmin::Directory
+
+  Enumerable な Dir クラス
+
+
 ========
 メソッド
 ========
