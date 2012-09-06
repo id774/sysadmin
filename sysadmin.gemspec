@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "sysadmin"
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["id774"]
-  s.date = "2012-07-17"
+  s.date = "2012-09-06"
   s.description = "System Administration General Library"
   s.email = "idnanashi@gmail.com"
   s.extra_rdoc_files = [
@@ -29,10 +29,12 @@ Gem::Specification.new do |s|
     "doc/README.ja",
     "lib/sysadmin.rb",
     "lib/sysadmin/dir_ext.rb",
+    "lib/sysadmin/directory.rb",
     "lib/sysadmin/file_ext.rb",
     "script/.gitkeep",
     "script/build",
     "spec/lib/sysadmin/dir_ext_spec.rb",
+    "spec/lib/sysadmin/directory_spec.rb",
     "spec/lib/sysadmin/file_ext_spec.rb",
     "spec/lib/sysadmin_spec.rb",
     "spec/spec_helper.rb",
