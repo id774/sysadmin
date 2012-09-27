@@ -5,7 +5,7 @@
 # Copyright:: 774 Copyright (c) 2012
 # License::   Licensed under the GNU GENERAL PUBLIC LICENSE, Version 3.0.
 
-require "time"
+require 'time'
 
 module Sysadmin
   module TimeExtension
