@@ -30,6 +30,10 @@ Module
 
   Extend the Dir class.
 
+- Sysadmin::TimeExtension
+
+  Extend the Time class.
+
 
 =====
 Class
@@ -68,5 +72,9 @@ Method
 * Dir.filelist(dir, subdirectory=false)
 
   Return the file lists in the directory.
+
+* Time.strict_parse(str)
+
+  Return nil when Time.parse failed in ruby 1.8.
 
 
