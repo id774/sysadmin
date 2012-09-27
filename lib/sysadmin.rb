@@ -7,7 +7,7 @@
 # License::   Licensed under the GNU GENERAL PUBLIC LICENSE, Version 3.0.
 
 module Sysadmin
-  VERSION = "0.1.1"
+  VERSION = "0.1.2"
   USER_DIR = "/."
   ROOT_DIR = File.expand_path("..", File.dirname(__FILE__))
   $:.unshift ROOT_DIR
@@ -17,4 +17,5 @@ module Sysadmin
   require 'file_ext'
   require 'dir_ext'
   require 'directory'
+  require 'time_ext'
 end
