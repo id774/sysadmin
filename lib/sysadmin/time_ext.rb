@@ -11,7 +11,7 @@ module Sysadmin
   module TimeExtension
 
     def Time.strict_parse(str)
-      unix_epoch = Time.at(0)
+      unix_epoch = Time.local(1970,1,1,0,0,0)
       time = Time.parse(str, nil) rescue nil
       time = nil if time == unix_epoch
       time
