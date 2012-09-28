@@ -25,30 +25,30 @@ module Sysadmin
       end
     end
 
-    def File.append_line(file, str)
-      if File.exist?(file)
-        f = open(file, 'a')
+    def File.append_line(params)
+      if File.exist?(params[:file])
+        f = open(params[:file], 'a')
       else
-        f = open(file, 'w')
+        f = open(params[:file], 'w')
       end
-      f << str
+      f << params[:str]
       f << "\n"
       f.close
     end
 
-    def File.new_line(file, str)
-      f = open(file, 'w')
-      f << str
+    def File.new_line(params)
+      f = open(params[:file], 'w')
+      f << params[:str]
       f << "\n"
       f.close
     end
 
-    def File.replace_line(file, src, out)
-      open(file, "r+") { |f|
+    def File.replace_line(params)
+      open(params[:file], "r+") { |f|
         f.rewind
         body = f.read
-        body = body.gsub(src) { |tmp|
-          out
+        body = body.gsub(params[:src]) { |tmp|
+          params[:dst]
         }
         f.rewind
         f.puts body
@@ -56,12 +56,12 @@ module Sysadmin
       }
     end
 
-    def File.remove_line(file, str)
+    def File.remove_line(params)
       out = ""
-      IO.foreach(file) { |line|
-        out << line unless line.include?(str)
+      IO.foreach(params[:file]) { |line|
+        out << line unless line.include?(params[:str])
       }
-      open(file, "w") { |f|
+      open(params[:file], "w") { |f|
         f.write out
       }
     end

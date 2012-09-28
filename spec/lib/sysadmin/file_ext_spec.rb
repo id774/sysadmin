@@ -10,7 +10,7 @@ describe Sysadmin::FileExtension, 'File クラス拡張' do
       try = "uncompressed"
       expect = "uncompressed\n"
       @uncompressed = Tempfile::new("test.txt")
-      File.append_line(@uncompressed.path, try)
+      File.append_line(:file => @uncompressed.path, :str => try)
 
       File.zread(@uncompressed.path).should == expect
       @uncompressed.close
@@ -38,7 +38,7 @@ describe Sysadmin::FileExtension, 'File クラス拡張' do
       expect   = "hoge\n"
 
       3.times do
-        File.append_line(@testfile.path, src)
+        File.append_line(:file => @testfile.path, :str => src)
       end
 
       open(@testfile.path) { |file|
@@ -58,9 +58,9 @@ describe Sysadmin::FileExtension, 'File クラス拡張' do
       expect   = "fuga\n"
 
       3.times do
-        File.append_line(@testfile.path, src)
+        File.append_line(:file => @testfile.path, :str => src)
       end
-      File.replace_line(@testfile.path, src, try)
+      File.replace_line(:file => @testfile.path, :src => src, :dst => try)
 
       open(@testfile.path) { |file|
         while line = file.gets
@@ -80,13 +80,13 @@ describe Sysadmin::FileExtension, 'File クラス拡張' do
       expect   = "fuga\n"
 
       3.times do
-        File.append_line(@testfile.path, src)
+        File.append_line(:file => @testfile.path, :str => src)
       end
-      File.replace_line(@testfile.path, src, replace)
+      File.replace_line(:file => @testfile.path, :src => src, :dst => replace)
       2.times do
-        File.append_line(@testfile.path, src)
+        File.append_line(:file => @testfile.path, :str => src)
       end
-      File.remove_line(@testfile.path, erase)
+      File.remove_line(:file => @testfile.path, :str => erase)
 
       open(@testfile.path) { |file|
         while line = file.gets
@@ -104,8 +104,8 @@ describe Sysadmin::FileExtension, 'File クラス拡張' do
       second   = 'second'
       expect   = "second\n"
 
-      File.new_line(@testfile.path, init)
-      File.new_line(@testfile.path, second)
+      File.new_line(:file => @testfile.path, :str => init)
+      File.new_line(:file => @testfile.path, :str => second)
 
       open(@testfile.path) { |file|
         while line = file.gets
