@@ -8,14 +8,8 @@
 
 module Sysadmin
   VERSION = "0.1.2"
-  USER_DIR = "/."
-  ROOT_DIR = File.expand_path("..", File.dirname(__FILE__))
-  $:.unshift ROOT_DIR
-  $:.unshift ROOT_DIR + '/lib'
-  $:.unshift ROOT_DIR + '/lib/sysadmin'
-
-  require 'file_ext'
-  require 'dir_ext'
-  require 'directory'
-  require 'time_ext'
+  require File.dirname(__FILE__) +  "/sysadmin/file_ext"
+  require File.dirname(__FILE__) +  "/sysadmin/dir_ext"
+  require File.dirname(__FILE__) +  "/sysadmin/directory"
+  require File.dirname(__FILE__) +  "/sysadmin/time_ext"
 end
