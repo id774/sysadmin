@@ -3,7 +3,7 @@
 require File.dirname(__FILE__) + '/../../spec_helper'
 
 describe Sysadmin::Util do
-  context 'で multi_dimensional_hash メソッドを呼ぶ場合' do
+  context 'で create_multi_dimensional_hash メソッドを呼ぶ場合' do
     describe '引数を付けずに呼ぶと' do
       it "多次元ハッシュが返る" do
         h = Sysadmin::Util.create_multi_dimensional_hash
