@@ -39,6 +39,10 @@ $ gem install sysadmin
 クラス
 ======
 
+- Sysadmin::Util
+
+  汎用的なメソッド
+
 - Sysadmin::Directory
 
   Enumerable な Dir クラス
@@ -47,6 +51,10 @@ $ gem install sysadmin
 ========
 メソッド
 ========
+
+* Sysadmin::Util.create_multi_dimensional_hash
+
+  多次元ハッシュを生成して返す
 
 * File.zread(file)
 

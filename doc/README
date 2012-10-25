@@ -39,6 +39,10 @@ Module
 Class
 =====
 
+- Sysadmin::Util
+
+  General methods.
+
 - Sysadmin::Directory
 
   Enumerable Dir class.
@@ -47,6 +51,11 @@ Class
 ======
 Method
 ======
+
+
+* Sysadmin::Util.create_multi_dimensional_hash
+
+  Return new Multi Dimensional Hash object.
 
 * File.zread (file)
 
