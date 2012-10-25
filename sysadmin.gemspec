@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "sysadmin"
-  s.version = "0.1.2"
+  s.version = "0.1.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["id774"]
-  s.date = "2012-09-27"
+  s.date = "2012-10-25"
   s.description = "System Administration General Library"
   s.email = "idnanashi@gmail.com"
   s.extra_rdoc_files = [
@@ -32,21 +32,25 @@ Gem::Specification.new do |s|
     "lib/sysadmin/directory.rb",
     "lib/sysadmin/file_ext.rb",
     "lib/sysadmin/time_ext.rb",
+    "lib/sysadmin/util.rb",
     "script/.gitkeep",
     "script/build",
     "spec/lib/sysadmin/dir_ext_spec.rb",
     "spec/lib/sysadmin/directory_spec.rb",
     "spec/lib/sysadmin/file_ext_spec.rb",
     "spec/lib/sysadmin/time_ext_spec.rb",
+    "spec/lib/sysadmin/util_spec.rb",
     "spec/lib/sysadmin_spec.rb",
     "spec/spec_helper.rb",
-    "spec/test_dir/.dir1/.file6",
-    "spec/test_dir/.file1",
-    "spec/test_dir/dir2/dir4/file4",
-    "spec/test_dir/dir2/file3",
-    "spec/test_dir/dir3/file5",
-    "spec/test_dir/dir6/dir7/.file7",
-    "spec/test_dir/file2",
+    "spec/test_dir/a/d.txt",
+    "spec/test_dir/a/g/h.txt",
+    "spec/test_dir/a/g/m/n.txt",
+    "spec/test_dir/a/o.txt",
+    "spec/test_dir/b/e.txt",
+    "spec/test_dir/b/i/j.txt",
+    "spec/test_dir/c/f.txt",
+    "spec/test_dir/c/k/l.txt",
+    "spec/test_dir/p.txt",
     "sysadmin.gemspec",
     "vendor/.gitkeep"
   ]
