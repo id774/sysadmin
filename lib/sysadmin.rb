@@ -7,7 +7,8 @@
 # License::   Licensed under the GNU GENERAL PUBLIC LICENSE, Version 3.0.
 
 module Sysadmin
-  VERSION = "0.1.2"
+  VERSION = "0.1.3"
+  require File.dirname(__FILE__) +  "/sysadmin/util"
   require File.dirname(__FILE__) +  "/sysadmin/file_ext"
   require File.dirname(__FILE__) +  "/sysadmin/dir_ext"
   require File.dirname(__FILE__) +  "/sysadmin/directory"

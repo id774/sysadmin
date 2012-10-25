@@ -1,3 +1,16 @@
+=== 0.1.3 / 2012-10-25
+
+* Add Class
+
+  * Sysadmin::Util
+
+* Pseudo-Keyword Arguments
+
+  * Sysadmin::FileExtensn
+
+* Uncontaminated loadpath
+
+
 === 0.1.2 / 2012-09-27
 
 * Add Methods
