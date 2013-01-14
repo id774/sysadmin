@@ -61,19 +61,19 @@ $ gem install sysadmin
   Sysadmin::FileHandler を呼ぶと追加される
   gz 圧縮 / 非圧縮に関わらずファイルを読み込む
 
-* File.append_line(file, str)
+* File.append_line(:file => FILENAME, :str => STR)
 
   ファイルに文字列を追記する
 
-* File.new_line(file, str)
+* File.new_line(:file => FILENAME, :str => STR)
 
   ファイルを新規作成する
 
-* File.replace_line(file, src, out)
+* File.replace_line(:file => FILENAME, :src => SRC, :dst => DST)
 
   ファイル内の文字列を置換する
 
-* File.remove_line(file, str)
+* File.remove_line(:file => FILENAME, :str => STR)
 
   ファイルから文字列にマッチする行を取り除く
 
