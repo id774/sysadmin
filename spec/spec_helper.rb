@@ -18,7 +18,7 @@ if ENV['COVERAGE'] == 'on'
   end
 end
 
-unless /^1\.9\./ =~ RUBY_VERSION
+unless /^1\.8\./ =~ RUBY_VERSION
   require 'rspec'
 end
 
