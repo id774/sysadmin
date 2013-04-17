@@ -1,18 +1,24 @@
-# encoding: utf-8
+# -*- mode: ruby; coding: utf-8 -*-
 
 require 'rubygems'
 
 require 'rspec/core'
 require 'rspec/core/rake_task'
 
-task :spec do
-  RSpec::Core::RakeTask.new(:spec) do |spec|
-    spec.rspec_opts = ["-c","-fs"]
-    spec.pattern = FileList['spec/**/*_spec.rb']
+RSpec::Core::RakeTask.new(:spec) do |spec|
+  spec.rspec_opts = ["-c", "-fs"]
+  spec.pattern = FileList['spec/**/*_spec.rb']
+end
+
+namespace :spec do
+  desc "Run RSpec for main procedure"
+  RSpec::Core::RakeTask.new(:lib) do |spec|
+    spec.rspec_opts = ["-c"]
+    spec.pattern = FileList['spec/lib/**/*_spec.rb']
   end
 end
 
-unless /^1\.8\./ =~ RUBY_VERSION
+if RUBY_VERSION >= '1.9.0'
   desc "Run RSpec code examples with simplecov"
   task :simplecov do
     ENV['COVERAGE'] = "on"
