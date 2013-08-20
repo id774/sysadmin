@@ -18,71 +18,60 @@ sysadmin
 $ gem install sysadmin
 
 
-==========
-モジュール
-==========
+============================
+クラス、モジュール、メソッド
+============================
 
 - Sysadmin::FileExtension
-
   File クラスを拡張する
 
-- Sysadmin::DirExtension
+  * File#zread(file)
+    Sysadmin::FileHandler を呼ぶと追加される
+    gz 圧縮 / 非圧縮に関わらずファイルを読み込む
 
+  * File#append_line(:file => FILENAME, :str => STR)
+    ファイルに文字列を追記する
+
+  * File#new_line(:file => FILENAME, :str => STR)
+    ファイルを新規作成する
+
+  * File#replace_line(:file => FILENAME, :src => SRC, :dst => DST)
+    ファイル内の文字列を置換する
+
+  * File#remove_line(:file => FILENAME, :str => STR)
+    ファイルから文字列にマッチする行を取り除く
+
+- Sysadmin::DirExtension
   Dir クラスを拡張する
 
-- Sysadmin::TimeExtension
+  * Dir#filelist(dir, subdirectory=false)
+    ディレクトリ内のファイル一覧を配列で返す
 
+- Sysadmin::TimeExtension
   Time クラスを拡張する
 
-
-======
-クラス
-======
-
-- Sysadmin::Util
-
-  汎用的なメソッド
+  * Time.strict_parse(str)
+    Ruby 1.8 でも日付を表現できない時に nil を返す parse メソッド
 
 - Sysadmin::Directory
-
   Enumerable な Dir クラス
 
+- Array
+  Array クラスを拡張する
 
-========
-メソッド
-========
+  * Array#average
+    配列の平均を返却する
 
-* Sysadmin::Util.create_multi_dimensional_hash
+  * Array#variance
+    配列の分散を返却する
 
-  多次元ハッシュを生成して返す
+  * Array#standard_devitation
+    配列の標準偏差を返却する
 
-* File.zread(file)
+- Sysadmin::Util
+  汎用的なメソッド
 
-  Sysadmin::FileHandler を呼ぶと追加される
-  gz 圧縮 / 非圧縮に関わらずファイルを読み込む
-
-* File.append_line(:file => FILENAME, :str => STR)
-
-  ファイルに文字列を追記する
-
-* File.new_line(:file => FILENAME, :str => STR)
-
-  ファイルを新規作成する
-
-* File.replace_line(:file => FILENAME, :src => SRC, :dst => DST)
-
-  ファイル内の文字列を置換する
-
-* File.remove_line(:file => FILENAME, :str => STR)
-
-  ファイルから文字列にマッチする行を取り除く
-
-* Dir.filelist(dir, subdirectory=false)
-
-  ディレクトリ内のファイル一覧を配列で返す
-
-* Time.strict_parse(str)
-
-  Ruby 1.8 でも日付を表現できない時に nil を返す parse メソッド
+  * Sysadmin::Util.create_multi_dimensional_hash
+    多次元ハッシュを生成して返す
 
 
