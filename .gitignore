@@ -22,4 +22,4 @@ db/*.db
 .rbenv-version
 
 vendor/gems/
-vendor/bundle/
+vendor/bundler/

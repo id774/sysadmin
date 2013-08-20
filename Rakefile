@@ -51,3 +51,17 @@ RDoc::Task.new do |rdoc|
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
+
+require 'jeweler'
+Jeweler::Tasks.new do |gem|
+  # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
+  gem.name = "sysadmin"
+  gem.homepage = "http://github.com/id774/sysadmin"
+  gem.license = "GPL"
+  gem.summary = %Q{Sysadmin}
+  gem.description = %Q{The general-purpose library for system administrations}
+  gem.email = "idnanashi@gmail.com"
+  gem.authors = ["id774"]
+  # dependencies defined in Gemfile
+end
+Jeweler::RubygemsDotOrgTasks.new
