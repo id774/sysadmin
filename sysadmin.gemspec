@@ -5,12 +5,12 @@
 
 Gem::Specification.new do |s|
   s.name = "sysadmin"
-  s.version = "0.1.3"
+  s.version = "0.1.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["id774"]
-  s.date = "2012-10-25"
-  s.description = "System Administration General Library"
+  s.date = "2013-08-20"
+  s.description = "The general-purpose library for system administrations"
   s.email = "idnanashi@gmail.com"
   s.extra_rdoc_files = [
     "README.md"
@@ -28,6 +28,7 @@ Gem::Specification.new do |s|
     "doc/README",
     "doc/README.ja",
     "lib/sysadmin.rb",
+    "lib/sysadmin/array_ext.rb",
     "lib/sysadmin/dir_ext.rb",
     "lib/sysadmin/directory.rb",
     "lib/sysadmin/file_ext.rb",
@@ -35,6 +36,7 @@ Gem::Specification.new do |s|
     "lib/sysadmin/util.rb",
     "script/.gitkeep",
     "script/build",
+    "spec/lib/sysadmin/array_ext_spec.rb",
     "spec/lib/sysadmin/dir_ext_spec.rb",
     "spec/lib/sysadmin/directory_spec.rb",
     "spec/lib/sysadmin/file_ext_spec.rb",
@@ -57,11 +59,11 @@ Gem::Specification.new do |s|
   s.homepage = "http://github.com/id774/sysadmin"
   s.licenses = ["GPL"]
   s.require_paths = ["lib"]
-  s.rubygems_version = "1.8.24"
-  s.summary = "Sysadmin Ruby"
+  s.rubygems_version = "2.0.6"
+  s.summary = "Sysadmin"
 
   if s.respond_to? :specification_version then
-    s.specification_version = 3
+    s.specification_version = 4
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_development_dependency(%q<cucumber>, [">= 0"])
