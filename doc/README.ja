@@ -50,7 +50,7 @@ $ gem install sysadmin
 - Sysadmin::TimeExtension
   Time クラスを拡張する
 
-  * Time.strict_parse(str)
+  * Time#strict_parse(str)
     Ruby 1.8 でも日付を表現できない時に nil を返す parse メソッド
 
 - Sysadmin::Directory
