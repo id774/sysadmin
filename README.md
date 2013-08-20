@@ -1,7 +1,7 @@
-Sysadmin Ruby
-=============
+Sysadmin
+========
 
-**System Administration General Library**
+**The general-purpose library for system administrations.**
 
 
 What is This?
@@ -9,11 +9,7 @@ What is This?
 
 The collection of libraries for managing the system.
 
-
-Environment
------------
-
-After ruby 1.8.
+See doc/README(.ja).
 
 
 Development
@@ -24,6 +20,12 @@ We need your help.
 **Repository**
 
 + https://github.com/id774/sysadmin
+
+
+Environment
+-----------
+
+After ruby 1.8.
 
 
 ChangeLog

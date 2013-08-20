@@ -1,7 +1,7 @@
 sysadmin
 
 Name
- sysadmin - general-purpose library for system management
+ sysadmin - The general-purpose library for system administrations.
 
 Syntax
  require 'sysadmin'
