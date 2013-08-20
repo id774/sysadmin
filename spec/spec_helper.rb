@@ -4,8 +4,7 @@ APP_ROOT = File.expand_path(File.join(File.dirname(__FILE__), ".."))
 $LOAD_PATH.unshift APP_ROOT
 $LOAD_PATH.unshift File.join(APP_ROOT)
 $LOAD_PATH.unshift File.join(APP_ROOT, 'lib')
-
-require 'sysadmin'
+require File.dirname(__FILE__) + '/../lib/sysadmin'
 
 if ENV['COVERAGE'] == 'on'
   require 'simplecov'
