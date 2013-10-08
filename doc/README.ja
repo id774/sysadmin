@@ -65,7 +65,7 @@ $ gem install sysadmin
   * Array#variance
     配列の分散を返却する
 
-  * Array#standard_devitation
+  * Array#standard_deviation
     配列の標準偏差を返却する
 
 - Sysadmin::Util

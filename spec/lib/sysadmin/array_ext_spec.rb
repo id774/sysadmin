@@ -17,10 +17,10 @@ describe Sysadmin, 'Array クラス拡張' do
     end
   end
 
-  context 'で standard_devitation メソッドを呼ぶ場合' do
+  context 'で standard_deviation メソッドを呼ぶ場合' do
     it "標準偏差が返却される" do
       a = [88, 99, 77, 66, 55, 40]
-      a.standard_devitation.should == 19.79407880037754
+      a.standard_deviation.should == 19.79407880037754
     end
   end
 end
