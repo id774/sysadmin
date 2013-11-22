@@ -4,115 +4,153 @@ require File.dirname(__FILE__) + '/../../spec_helper'
 require 'tempfile'
 require 'zlib'
 
-describe Sysadmin::FileExtension, 'File クラス拡張' do
-  context 'で非圧縮のファイルを zread した場合' do
-    it "正しく読み込まれる" do
-      try = "uncompressed"
-      expect = "uncompressed\n"
-      @uncompressed = Tempfile::new("test.txt")
-      File.append_line(:file => @uncompressed.path, :str => try)
+describe File do
+  describe '#zread' do
+    context 'read uncompressed file' do
+      subject {
+        @uncompressed = Tempfile::new("test.txt")
+        File.append_line(:file => @uncompressed.path, :str => try)
+        File.zread(@uncompressed.path)
+      }
 
-      File.zread(@uncompressed.path).should == expect
-      @uncompressed.close
+      let(:try) { "uncompressed" }
+      let(:expected) { "uncompressed\n" }
+
+      it 'should read successful' do
+        expect(subject).to eql expected
+        @uncompressed.close
+      end
+    end
+
+    context 'read compressed file' do
+      subject {
+        @compressed = Tempfile::new("test2.txt")
+        Zlib::GzipWriter.open(@compressed.path) do |gz|
+          gz.puts try
+        end
+        File.zread(@compressed.path)
+      }
+
+      let(:try) { "compressed" }
+      let(:expected) { "compressed\n" }
+
+      it 'should read successful' do
+        expect(subject).to eql expected
+        @compressed.close
+      end
     end
   end
 
-  context 'で圧縮されたファイルを zread した場合' do
-    it "正しく読み込まれる" do
-      try = "compressed"
-      expect = "compressed\n"
-      @compressed = Tempfile::new("test2.txt")
-      Zlib::GzipWriter.open(@compressed.path) do |gz|
-        gz.puts try
-      end
+  describe '#append_line' do
+    context 'with arguments file and strings' do
 
-      File.zread(@compressed.path).should == expect
-      @compressed.close
-    end
-  end
-
-  context 'で append_line メソッドを呼ぶと' do
-    it "ファイル末尾に文字列行が追加される" do
-      @testfile = Tempfile::new("test.txt")
-      src      = 'hoge'
-      expect   = "hoge\n"
-
-      3.times do
-        File.append_line(:file => @testfile.path, :str => src)
-      end
-
-      open(@testfile.path) { |file|
-        while line = file.gets
-          line.should == expect
+      subject {
+        @testfile = Tempfile::new("test.txt")
+        3.times do
+          File.append_line(:file => @testfile.path, :str => src)
         end
       }
-      @testfile.close
+
+      let(:src) { 'hoge' }
+      let(:expected) { "hoge\n" }
+
+      it 'should append strings to last line of file' do
+        subject
+
+        open(@testfile.path) { |file|
+          while line = file.gets
+            expect(line).to eql expected
+          end
+        }
+        @testfile.close
+      end
     end
   end
 
-  context 'で replace_line メソッドを呼ぶと' do
-    it "ファイル内の文字列が置換される" do
-      @testfile = Tempfile::new("test.txt")
-      src      = 'hoge'
-      try      = 'fuga'
-      expect   = "fuga\n"
+  describe '#replace_line' do
+    context 'with arguments file and strings' do
 
-      3.times do
-        File.append_line(:file => @testfile.path, :str => src)
-      end
-      File.replace_line(:file => @testfile.path, :src => src, :dst => try)
-
-      open(@testfile.path) { |file|
-        while line = file.gets
-          line.should == expect
+      subject {
+        @testfile = Tempfile::new("test.txt")
+        3.times do
+          File.append_line(:file => @testfile.path, :str => src)
         end
+        File.replace_line(:file => @testfile.path, :src => src, :dst => try)
       }
-      @testfile.close
+
+      let(:src) { 'hoge' }
+      let(:try) { 'fuga' }
+      let(:expected) { "fuga\n" }
+
+      it 'should replace line in file' do
+        subject
+
+        open(@testfile.path) { |file|
+          while line = file.gets
+            expect(line).to eql expected
+          end
+        }
+        @testfile.close
+      end
     end
   end
 
-  context 'で remove_line メソッドを呼ぶと' do
-    it "ファイル内の引数に適合した行が削除される" do
-      @testfile = Tempfile::new("test.txt")
-      src      = 'hoge'
-      replace  = 'fuga'
-      erase    = 'hoge'
-      expect   = "fuga\n"
+  describe '#remove_line' do
+    context 'with arguments file and strings' do
 
-      3.times do
-        File.append_line(:file => @testfile.path, :str => src)
-      end
-      File.replace_line(:file => @testfile.path, :src => src, :dst => replace)
-      2.times do
-        File.append_line(:file => @testfile.path, :str => src)
-      end
-      File.remove_line(:file => @testfile.path, :str => erase)
-
-      open(@testfile.path) { |file|
-        while line = file.gets
-          line.should == expect
+      subject {
+        @testfile = Tempfile::new("test.txt")
+        3.times do
+          File.append_line(:file => @testfile.path, :str => src)
         end
+        File.replace_line(:file => @testfile.path, :src => src, :dst => replace)
+        2.times do
+          File.append_line(:file => @testfile.path, :str => src)
+        end
+        File.remove_line(:file => @testfile.path, :str => erase)
       }
-      @testfile.close
+
+      let(:src) { 'hoge' }
+      let(:replace) { 'fuga' }
+      let(:erase) { 'hoge' }
+      let(:expected) { "fuga\n" }
+
+      it 'should remove line from file' do
+        subject
+
+        open(@testfile.path) { |file|
+          while line = file.gets
+            expect(line).to eql expected
+          end
+        }
+        @testfile.close
+      end
     end
   end
 
-  context 'で new_line メソッドを呼ぶと' do
-    it "文字列行のファイルが新規作成される" do
-      @testfile = Tempfile::new("test.txt")
-      init     = 'init'
-      second   = 'second'
-      expect   = "second\n"
+  describe '#new_line' do
+    context 'with arguments file and strings' do
 
-      File.new_line(:file => @testfile.path, :str => init)
-      File.new_line(:file => @testfile.path, :str => second)
-
-      open(@testfile.path) { |file|
-        while line = file.gets
-          line.should == expect
-        end
+      subject {
+        @testfile = Tempfile::new("test.txt")
+        File.new_line(:file => @testfile.path, :str => init)
+        File.new_line(:file => @testfile.path, :str => second)
       }
-      @testfile.close
+
+      let(:init) { 'init' }
+      let(:second) { 'second' }
+      let(:expect) { "second\n" }
+
+      it 'should create file of string lines' do
+        subject
+
+        open(@testfile.path) { |file|
+          while line = file.gets
+            line.should == expect
+          end
+        }
+        @testfile.close
+      end
     end
   end
 end
