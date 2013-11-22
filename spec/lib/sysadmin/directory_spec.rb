@@ -18,7 +18,7 @@ describe Sysadmin::Directory do
       let(:dir) { File.expand_path("../../test_dir/a", File.dirname(__FILE__)) }
 
       it 'should return file list in directory' do
-        subject.should have(4).items
+        expect(subject).to have(4).items
       end
     end
 
@@ -27,7 +27,7 @@ describe Sysadmin::Directory do
       let(:dir) { File.expand_path("../../test_dir/a/g", File.dirname(__FILE__)) }
 
       it 'should return file list in directory' do
-        subject.should have(2).items
+        expect(subject).to have(2).items
       end
     end
 
