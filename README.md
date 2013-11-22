@@ -15,7 +15,7 @@ See doc/README(.ja).
 Purpose
 -------
 
-**Array Extension**
+**Array**
 
 Extension for Array class. Array operation to be used well in the System Management.
 
