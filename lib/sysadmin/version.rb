@@ -6,5 +6,5 @@
 # License::   Licensed under the GNU GENERAL PUBLIC LICENSE, Version 3.0.
 
 module Sysadmin
-  VERSION = "0.1.5"
+  VERSION = "0.2.0"
 end
