@@ -59,8 +59,11 @@ $ gem install sysadmin
 - Array
   Array クラスを拡張する
 
-  * Array#average
-    配列の平均を返却する
+  * Array#sum
+    配列の合計値を整数型で返却する
+
+  * Array#sumf
+    配列の合計値を浮動小数点型で返却する
 
   * Array#variance
     配列の分散を返却する
