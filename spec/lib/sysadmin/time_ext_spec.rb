@@ -2,18 +2,23 @@
 
 require File.dirname(__FILE__) + '/../../spec_helper'
 
-describe Sysadmin::TimeExtension, 'Time クラス拡張' do
-  context 'で strict_parse メソッドを呼ぶ場合' do
-    describe '有効な日付を指定すると' do
-      it "日付が返却される" do
-        expect = Time.parse("2012/09/27 11:45:00")
-        Time.strict_parse("2012/09/27 11:45:00").should == expect
+describe Time do
+  describe '#strict_parse' do
+    context 'with valid date' do
+      subject { Time.strict_parse("2012/09/27 11:45:00") }
+
+      let(:expected) { Time.parse("2012/09/27 11:45:00") }
+
+      it 'should be returned valid date' do
+        expect(subject).to eql expected
       end
     end
 
-    describe '無効な日付を指定すると' do
-      it "nil が返却される" do
-        Time.strict_parse("hoge").should be_nil
+    context 'with invalid date' do
+      subject { Time.strict_parse("hoge") }
+
+      it 'should be returned nil' do
+        expect(subject).to be_nil
       end
     end
   end
