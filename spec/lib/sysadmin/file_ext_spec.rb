@@ -17,7 +17,7 @@ describe File do
       let(:expected) { "uncompressed\n" }
 
       it 'should read successful' do
-        expect(subject).to eql expected
+        expect(subject).to eq expected
         @uncompressed.close
       end
     end
@@ -35,7 +35,7 @@ describe File do
       let(:expected) { "compressed\n" }
 
       it 'should read successful' do
-        expect(subject).to eql expected
+        expect(subject).to eq expected
         @compressed.close
       end
     end
@@ -59,7 +59,7 @@ describe File do
 
         open(@testfile.path) { |file|
           while line = file.gets
-            expect(line).to eql expected
+            expect(line).to eq expected
           end
         }
         @testfile.close
@@ -87,7 +87,7 @@ describe File do
 
         open(@testfile.path) { |file|
           while line = file.gets
-            expect(line).to eql expected
+            expect(line).to eq expected
           end
         }
         @testfile.close
@@ -120,7 +120,7 @@ describe File do
 
         open(@testfile.path) { |file|
           while line = file.gets
-            expect(line).to eql expected
+            expect(line).to eq expected
           end
         }
         @testfile.close

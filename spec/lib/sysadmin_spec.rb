@@ -6,6 +6,6 @@ describe Sysadmin do
   context "VERSION" do
     subject { Sysadmin::VERSION }
 
-    it { expect(subject).to eql "0.2.0" }
+    it { expect(subject).to eq "0.2.0" }
   end
 end

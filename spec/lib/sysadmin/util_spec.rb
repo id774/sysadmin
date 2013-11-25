@@ -11,7 +11,7 @@ describe Sysadmin::Util do
       }
 
       it 'should be returned multi dimensional hash' do
-        expect(subject).to eql 10
+        expect(subject).to eq 10
       end
     end
   end

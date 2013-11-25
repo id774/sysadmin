@@ -10,7 +10,7 @@ describe Time do
       let(:expected) { Time.parse("2012/09/27 11:45:00") }
 
       it 'should be returned valid date' do
-        expect(subject).to eql expected
+        expect(subject).to eq expected
       end
     end
 
